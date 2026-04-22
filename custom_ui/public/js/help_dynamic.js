@@ -1,1 +1,0 @@
-console.log("🔥 HELP JS FILE LOADED");
