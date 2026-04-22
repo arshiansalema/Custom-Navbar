@@ -24,6 +24,13 @@ app_license = "mit"
 # Includes in <head>
 # ------------------
 
+# app_include_js = ["/assets/custom_ui/js/help_dynamic.js"]
+app_include_js = ["custom_ui.bundle.js"]
+
+doctype_js = {
+    "*": "public/js/help_dynamic.js"
+}
+
 # include js, css files in header of desk.html
 # app_include_css = "/assets/custom_ui/css/custom_ui.css"
 # app_include_js = "/assets/custom_ui/js/custom_ui.js"
