@@ -25,11 +25,17 @@ app_license = "mit"
 # ------------------
 
 # app_include_js = ["/assets/custom_ui/js/help_dynamic.js"]
-app_include_js = ["custom_ui.bundle.js"]
+# "/assets/custom_ui/js/helps.js",
+# app_include_js = [
+#     "custom_ui.bundle.js",
+#     # "/assets/custom_ui/js/customs_help.js"
+# ]
 
-doctype_js = {
-    "*": "public/js/help_dynamic.js"
-}
+app_include_js = "/assets/custom_ui/js/ammend_cancel.js"
+# app_include_js = ["custom_ui.bundle.js"]
+
+# app_include_js = "/assets/custom_ui/js/help.js"
+# app_include_js = "custom_ui.bundle.js"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/custom_ui/css/custom_ui.css"
@@ -55,6 +61,10 @@ doctype_js = {
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
+override_whitelisted_methods = {
+    "hrms.hr.doctype.expense_claim.expense_claim.get_advances":
+    "custom_ui.api.expense_claim.get_advances"
+}
 # Svg Icons
 # ------------------
 # include app icons in desk

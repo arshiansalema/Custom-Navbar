@@ -5,7 +5,6 @@
       setTimeout(() => {
         let helpLinks = document.querySelector("#help-links");
         if (!helpLinks) {
-          console.log("\u274C helpLinks not found");
           return;
         }
         document.querySelectorAll(".custom-help-item").forEach((el) => el.remove());
@@ -17,17 +16,16 @@
           callback: function(r) {
             let data = r.message || {};
             if (data.external_url) {
-              helpLinks.insertAdjacentHTML("afterbegin", `
+              helpLinks.insertAdjacentHTML("beforeend", `
                             <a class="dropdown-item custom-help-item" href="${data.external_url}" target="_blank">
-                                Customizations in ${doctype || "General"}
+                                Customization in ${doctype || "General"}
                             </a>
                         `);
-              help_menu.appendChild(custom_item);
             }
           }
         });
-      }, 400);
+      }, 100);
     });
   });
 })();
-//# sourceMappingURL=custom_ui.bundle.URNP2NHG.js.map
+//# sourceMappingURL=custom_ui.bundle.F5LDASBL.js.map
