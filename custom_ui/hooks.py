@@ -31,7 +31,15 @@ app_license = "mit"
 #     # "/assets/custom_ui/js/customs_help.js"
 # ]
 
-app_include_js = "/assets/custom_ui/js/ammend_cancel.js"
+app_include_js = [
+    "/assets/custom_ui/js/ammend_cancel.js",
+    "/assets/custom_ui/js/no_edit.js",
+]
+
+
+# app_include_js = "/assets/custom_ui/js/ammend_cancel.js"
+
+# app_include_js = "/assets/custom_ui/read_only_document.js"
 # app_include_js = ["custom_ui.bundle.js"]
 
 # app_include_js = "/assets/custom_ui/js/help.js"
@@ -161,6 +169,19 @@ override_whitelisted_methods = {
 # 		"on_trash": "method"
 # 	}
 # }
+
+
+doc_events = {
+    "*": {
+        "validate": "custom_ui.custom_ui.read_only.validate_read_only",
+        "before_insert": "custom_ui.custom_ui.read_only.validate_read_only",
+        "before_save": "custom_ui.custom_ui.read_only.validate_read_only",
+        "before_submit": "custom_ui.custom_ui.read_only.validate_read_only",
+        "before_cancel": "custom_ui.custom_ui.read_only.validate_read_only",
+        "before_update_after_submit": "custom_ui.custom_ui.read_only.validate_read_only",
+        "on_trash": "custom_ui.custom_ui.read_only.validate_read_only",
+    }
+}
 
 # Scheduled Tasks
 # ---------------
